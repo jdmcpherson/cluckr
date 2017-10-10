@@ -5,7 +5,10 @@
   "main": "app.js",
   "scripts": {
     "start": "nodemon",
-    "debug": "nodemon --inspect"
+    "debug": "nodemon --inspect",
+    "db:create": "createdb --echo cluckr_dev",
+    "db:drop": "dropdb --echo --if-exists cluckr_dev",
+    "db:migrate": "node db/migration.js"
   },
   "repository": {
     "type": "git",
