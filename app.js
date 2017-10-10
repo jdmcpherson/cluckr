@@ -1,11 +1,15 @@
 const Express = require('express');
-const morgan = require('morgan')
+const path = require('path');
+const morgan = require('morgan');
 
 const app = Express();
+
 app.use(morgan('dev'));
+app.use(Express.static(path.join(__dirname, 'public')));
+app.set('view engine', 'ejs');
 
 app.get('/', (request, response) => {
-    response.send('test')
+    response.render('index')
 })
 
 app.listen(
