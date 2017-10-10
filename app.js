@@ -12,6 +12,11 @@ app.get('/', (request, response) => {
     response.render('index')
 })
 
+app.post('/', (request, response) => {
+    const {body} = request;
+    response.render('index', body)
+})
+
 app.listen(
     8080,
     () => console.log('Server listening on http://localhost:8080')
