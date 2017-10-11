@@ -2,14 +2,14 @@
 
 <div class="container">
     <% for (let post of posts) { %>
-    <% let time = moment(post.created_at).fromNow() %>
+    <% let postAge = moment(post.created_at).fromNow() %>
         <div class="card">
             <div class="row">
                 <div class="col-sm-2">
                     <img src="./images/avatar.png" class="img-fluid logos">
                 </div>
                 <div class="col-sm-9">
-                    <h4> <%= post.username %> - <%= time %></h4>
+                    <h4> <%= post.username %> - <%= postAge %></h4>
                     <p> <%= post.content %> </p>
                     <img class="img-fluid" src="<%= post.image_path %>">
                 </div>
