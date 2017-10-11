@@ -4,8 +4,10 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const kx = require('./db/connection');
 const multer = require('multer');
+const moment = require('moment');
 
 const app = Express();
+moment().format();
 
 const posts = require('./routes/posts')
 const form = require('./routes/form')

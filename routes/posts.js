@@ -4,8 +4,10 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const kx = require('../db/connection');
 const multer = require('multer');
+const moment = require('moment');
 
 const router = Express.Router();
+moment().format();
 
 router.use(bodyParser.urlencoded({ extended: false }))
 router.use(morgan('dev'));
@@ -18,7 +20,7 @@ router.get('/', (request, response) => {
         .from('posts')
         .orderBy('created_at', 'DESC')
         .then(posts => {
-            response.render('index', { posts })
+            response.render('index', { posts, moment })
         })
 })
 
